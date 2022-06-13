@@ -14,9 +14,9 @@ public class SpawnArea : MonoBehaviour
 
     private IEnumerator SpawnCircle()
     {
-        while (_spawnPoints.Count > 0)
+        for (int i = 0; i < _spawnPoints.Count; i++)
         {
-            Instantiate(_cirlePrefab, _spawnPoints[Random.Range(0, _spawnPoints.Count + 1)].transform);
+            Instantiate(_cirlePrefab, _spawnPoints[i].transform);
             yield return new WaitForSeconds(2);
         }
     }
